@@ -1,8 +1,8 @@
 package com.example.profilemanager
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Range
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
@@ -10,8 +10,8 @@ import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Spinner
 
-class CreateProfileScreen : AppCompatActivity(), Contract.View {
-    private lateinit var presenter: Contract.Presenter
+class CreateProfileScreen : AppCompatActivity(), CreateProfileContract.View {
+    private lateinit var presenter: CreateProfileContract.Presenter
     private var id = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +25,7 @@ class CreateProfileScreen : AppCompatActivity(), Contract.View {
     private fun bindViews() {
         createEducationLevelDropdown()
         setOnClickForSubmitButton()
+        setOnClickForAllProfilesButton()
     }
 
     private fun createEducationLevelDropdown() {
@@ -48,6 +49,15 @@ class CreateProfileScreen : AppCompatActivity(), Contract.View {
         }
     }
 
+    private fun setOnClickForAllProfilesButton() {
+        val allProfilesButton: Button = findViewById(R.id.all_profiles_button)
+
+        allProfilesButton.setOnClickListener {
+            val allProfilesScreen = Intent(this, AllProfiles::class.java)
+            startActivity(allProfilesScreen)
+        }
+    }
+
     private fun submitData() {
         val firstName: String = findViewById<EditText>(R.id.first_name).text.toString()
         val lastName: String = findViewById<EditText>(R.id.last_name).text.toString()
@@ -59,7 +69,7 @@ class CreateProfileScreen : AppCompatActivity(), Contract.View {
         val bio: String = findViewById<EditText>(R.id.bio).text.toString()
 
 
-        presenter.addUser(User(id++, firstName, lastName, age, dateOfBirth, gender, educationLevel, bio))
+        presenter.addUser(User(firstName, lastName, age, dateOfBirth, gender, educationLevel, bio))
     }
 
     private fun clearData() {

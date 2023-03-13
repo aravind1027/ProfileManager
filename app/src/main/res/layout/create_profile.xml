@@ -117,5 +117,13 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bio" />
 
+    <Button
+        android:id="@+id/all_profiles_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/view_all_profiles"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/submit_button" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
