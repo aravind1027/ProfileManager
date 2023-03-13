@@ -3,8 +3,8 @@ package com.example.profilemanager
 import androidx.annotation.WorkerThread
 
 class UserRepository(private val userDao: UserDao) {
-    fun getAll() {
-        userDao.getAll()
+    fun getAll(): List<User> {
+        return userDao.getAll()
     }
 
     fun findByName(firstName: String, lastName: String): User {

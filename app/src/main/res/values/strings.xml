@@ -10,6 +10,9 @@
     <string name="date_of_birth_hint">Date of Birth (mm/dd/yyyy)</string>
     <string name="brief_desc_text">Add a brief descirption about yourself</string>
     <string name="submit">Submit</string>
+    <string name="view_all_profiles">View All Profiles</string>
+    <string name="personal_info">First: %s Last: %s Age: %s DOB: %s Gender: %s Education: %s</string>
+    <string name="bio">Bio:\n%s</string>
     <string-array name="education_level">
         <item>Uneducated</item>
         <item>High School</item>

@@ -1,13 +1,13 @@
 package com.example.profilemanager
 
-interface Contract {
+interface AllProfilesContract {
     interface View {
+
     }
 
     interface Presenter {
-        fun addUser(user: User)
+        fun getAllUsers(): List<User>
 
         fun onDestroy()
     }
-
 }
