@@ -1,10 +1,11 @@
-package com.example.profilemanager
+package com.example.profilemanager.ui.allprofiles
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.profilemanager.R
 
-class AllProfiles : AppCompatActivity(), AllProfilesContract.View {
+class AllProfilesScreen : AppCompatActivity(), AllProfilesContract.View {
     private lateinit var presenter: AllProfilesContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,10 +18,5 @@ class AllProfiles : AppCompatActivity(), AllProfilesContract.View {
         val profileList: RecyclerView = findViewById(R.id.profile_list)
 
         profileList.adapter = ProfileAdapter(this, users)
-    }
-
-    override fun onDestroy() {
-        presenter.onDestroy()
-        super.onDestroy()
     }
 }

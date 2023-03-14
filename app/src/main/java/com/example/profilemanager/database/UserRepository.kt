@@ -1,6 +1,7 @@
-package com.example.profilemanager
+package com.example.profilemanager.database
 
-import androidx.annotation.WorkerThread
+import com.example.profilemanager.database.User
+import com.example.profilemanager.database.UserDao
 
 class UserRepository(private val userDao: UserDao) {
     fun getAll(): List<User> {

@@ -1,4 +1,4 @@
-package com.example.profilemanager
+package com.example.profilemanager.ui.allprofiles
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.profilemanager.R
+import com.example.profilemanager.database.User
 
 class ProfileAdapter(
     private val context: Context,

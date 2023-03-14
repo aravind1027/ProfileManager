@@ -1,6 +1,9 @@
-package com.example.profilemanager
+package com.example.profilemanager.ui.allprofiles
 
 import android.app.Application
+import com.example.profilemanager.database.User
+import com.example.profilemanager.database.UserRepository
+import com.example.profilemanager.database.UserRoomDatabase
 
 class AllProfilesPresenter(
     private var view: AllProfilesContract.View?,
@@ -12,9 +15,5 @@ class AllProfilesPresenter(
 
     override fun getAllUsers(): List<User> {
         return repository.getAll()
-    }
-
-    override fun onDestroy() {
-        view = null
     }
 }

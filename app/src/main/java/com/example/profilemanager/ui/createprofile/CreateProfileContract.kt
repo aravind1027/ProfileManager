@@ -1,4 +1,6 @@
-package com.example.profilemanager
+package com.example.profilemanager.ui.createprofile
+
+import com.example.profilemanager.database.User
 
 interface CreateProfileContract {
     interface View {
@@ -6,7 +8,5 @@ interface CreateProfileContract {
 
     interface Presenter {
         fun addUser(user: User)
-
-        fun onDestroy()
     }
 }

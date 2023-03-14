@@ -1,4 +1,4 @@
-package com.example.profilemanager
+package com.example.profilemanager.ui.createprofile
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +9,9 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Spinner
+import com.example.profilemanager.R
+import com.example.profilemanager.database.User
+import com.example.profilemanager.ui.allprofiles.AllProfilesScreen
 
 class CreateProfileScreen : AppCompatActivity(), CreateProfileContract.View {
     private lateinit var presenter: CreateProfileContract.Presenter
@@ -18,7 +21,7 @@ class CreateProfileScreen : AppCompatActivity(), CreateProfileContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.create_profile)
 
-        presenter = CreateProfilePresenter(this, application)
+        presenter = CreateProfilePresenter(application)
         bindViews()
     }
 
@@ -53,7 +56,7 @@ class CreateProfileScreen : AppCompatActivity(), CreateProfileContract.View {
         val allProfilesButton: Button = findViewById(R.id.all_profiles_button)
 
         allProfilesButton.setOnClickListener {
-            val allProfilesScreen = Intent(this, AllProfiles::class.java)
+            val allProfilesScreen = Intent(this, AllProfilesScreen::class.java)
             startActivity(allProfilesScreen)
         }
     }
@@ -68,7 +71,6 @@ class CreateProfileScreen : AppCompatActivity(), CreateProfileContract.View {
         val educationLevel: String = findViewById<Spinner>(R.id.education_level).selectedItem.toString()
         val bio: String = findViewById<EditText>(R.id.bio).text.toString()
 
-
         presenter.addUser(User(firstName, lastName, age, dateOfBirth, gender, educationLevel, bio))
     }
 
@@ -78,11 +80,7 @@ class CreateProfileScreen : AppCompatActivity(), CreateProfileContract.View {
         findViewById<EditText>(R.id.age).text.clear()
         findViewById<EditText>(R.id.date_of_birth).text.clear()
         findViewById<RadioGroup>(R.id.gender_select).clearCheck()
+        findViewById<Spinner>(R.id.education_level).setSelection(0)
         findViewById<EditText>(R.id.bio).text.clear()
-    }
-
-    override fun onDestroy() {
-        presenter.onDestroy()
-        super.onDestroy()
     }
 }
