@@ -1,4 +1,4 @@
-package com.example.profilemanager
+package com.example.profilemanager.database
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

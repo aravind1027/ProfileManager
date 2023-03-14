@@ -1,10 +1,11 @@
-package com.example.profilemanager
+package com.example.profilemanager.ui.createprofile
 
 import android.app.Application
-import android.util.Log
+import com.example.profilemanager.database.User
+import com.example.profilemanager.database.UserRepository
+import com.example.profilemanager.database.UserRoomDatabase
 
 class CreateProfilePresenter(
-    private var view: CreateProfileContract.View?,
     application: Application
 ) : CreateProfileContract.Presenter {
     private val database = UserRoomDatabase.getDatabase(application)
@@ -12,9 +13,5 @@ class CreateProfilePresenter(
 
     override fun addUser(user: User) {
         repository.insert(user)
-    }
-
-    override fun onDestroy() {
-        view = null
     }
 }

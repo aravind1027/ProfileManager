@@ -1,4 +1,4 @@
-package com.example.profilemanager
+package com.example.profilemanager.database
 
 import android.content.Context
 import androidx.room.Database
