@@ -1,9 +1,11 @@
 package com.example.profilemanager.ui.allprofiles
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.profilemanager.R
+import com.example.profilemanager.ui.profiledetails.ProfileDetailsScreen
 
 class AllProfilesScreen : AppCompatActivity(), AllProfilesContract.View {
     private lateinit var presenter: AllProfilesContract.Presenter

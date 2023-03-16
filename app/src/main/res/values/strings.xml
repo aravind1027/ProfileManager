@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">ProfileManager</string>
-    <string name="title">Create Profile</string>
+    <string name="create_profile_title">Create Profile</string>
+    <string name="all_profiles_title">All Profiles</string>
+    <string name="profile_details_title">Profile Details</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="gender">Gender</string>
@@ -13,6 +15,7 @@
     <string name="view_all_profiles">View All Profiles</string>
     <string name="personal_info">First: %s Last: %s Age: %s DOB: %s Gender: %s Education: %s</string>
     <string name="bio">Bio:\n%s</string>
+    <string name="select_image_prompt">Select Image:</string>
     <string-array name="education_level">
         <item>Uneducated</item>
         <item>High School</item>
