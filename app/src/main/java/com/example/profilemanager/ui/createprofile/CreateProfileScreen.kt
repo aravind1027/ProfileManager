@@ -123,4 +123,6 @@ class CreateProfileScreen : AppCompatActivity(), CreateProfileContract.View {
             pickMedia.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
         }
     }
+
+
 }

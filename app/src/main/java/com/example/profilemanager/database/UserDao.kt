@@ -6,7 +6,7 @@ import com.example.profilemanager.database.User
 @Dao
 interface UserDao {
     @Query("SELECT * FROM user_table")
-    fun getAll(): List<User>
+    fun getAll(): MutableList<User>
 
     @Query("SELECT * FROM user_table WHERE first_name LIKE :first AND " +
             "last_name LIKE :last LIMIT 1")
@@ -15,6 +15,6 @@ interface UserDao {
     @Insert
     fun insert(user: User)
 
-    @Query("DELETE FROM user_table")
-    fun deleteAll()
+    @Delete
+    fun delete(user: User)
 }

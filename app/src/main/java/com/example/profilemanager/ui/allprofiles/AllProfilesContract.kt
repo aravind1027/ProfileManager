@@ -7,6 +7,10 @@ interface AllProfilesContract {
     }
 
     interface Presenter {
-        fun getAllUsers(): List<User>
+        fun getAllUsers(): MutableList<User>
+
+        fun addUser(user: User)
+
+        fun removeUser(user: User)
     }
 }

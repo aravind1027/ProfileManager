@@ -4,7 +4,7 @@ import com.example.profilemanager.database.User
 import com.example.profilemanager.database.UserDao
 
 class UserRepository(private val userDao: UserDao) {
-    fun getAll(): List<User> {
+    fun getAll(): MutableList<User> {
         return userDao.getAll()
     }
 
@@ -16,7 +16,7 @@ class UserRepository(private val userDao: UserDao) {
         userDao.insert(user)
     }
 
-    fun deleteAll() {
-        userDao.deleteAll()
+    fun delete(user: User) {
+        userDao.delete(user)
     }
 }
