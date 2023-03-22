@@ -1,13 +1,19 @@
 package com.example.profilemanager.ui.allprofiles
 
 import android.content.Context
+import android.content.Intent
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.profilemanager.R
 import com.example.profilemanager.database.User
+import com.example.profilemanager.ui.profiledetails.ProfileDetailsScreen
 
 class ProfileAdapter(
     private val context: Context,
@@ -15,6 +21,8 @@ class ProfileAdapter(
 ) : RecyclerView.Adapter<ProfileAdapter.ProfileViewHolder>() {
 
     class ProfileViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val profileCard: CardView = view.findViewById(R.id.card_layout)
+        val profilePicture: ImageView = view.findViewById(R.id.profile_picture)
         val profileInfo: TextView = view.findViewById(R.id.profile_info)
         val briefDesc: TextView = view.findViewById(R.id.brief_description)
     }
@@ -27,10 +35,18 @@ class ProfileAdapter(
     }
 
     override fun onBindViewHolder(holder: ProfileViewHolder, position: Int) {
-        val (firstName, lastName, age, dateOfBirth, gender, educationLevel, bio) = users[position]
+        val user = users[position]
+        val (firstName, lastName, dateOfBirth, gender, educationLevel, hobbies, profilePicture, bio) = user
+        val age = user.calculateAge()
+        val profileDetailsScreen = Intent(context, ProfileDetailsScreen::class.java)
+        profileDetailsScreen.putExtra("USER_ID", user.id)
 
+        holder.profileCard.setOnClickListener {
+            startActivity(context, profileDetailsScreen, null)
+        }
         holder.profileInfo.text =
-            context.getString(R.string.personal_info, firstName, lastName, age, dateOfBirth, gender, educationLevel)
+            context.getString(R.string.personal_info, firstName, lastName, age, dateOfBirth, gender, educationLevel, hobbies)
+        holder.profilePicture.setImageBitmap(BitmapFactory.decodeByteArray(profilePicture, 0, profilePicture.size))
         holder.briefDesc.text = context.getString(R.string.bio, bio)
     }
 
