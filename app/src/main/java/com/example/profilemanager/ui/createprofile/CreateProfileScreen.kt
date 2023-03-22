@@ -151,14 +151,14 @@ class CreateProfileScreen : AppCompatActivity(), CreateProfileContract.View {
     }
 
     private fun clearData() {
-        binding.firstName.text.clear()
-        binding.lastName.text.clear()
-        binding.dateOfBirth.text.clear()
+        binding.firstName.text?.clear()
+        binding.lastName.text?.clear()
+        binding.dateOfBirth.text?.clear()
         binding.genderSelect.clearCheck()
         binding.educationLevel.setSelection(0)
         unCheckHobbies()
         binding.profilePicture.setImageResource(R.drawable.portrait_placeholder)
-        binding.bio.text.clear()
+        binding.bio.text?.clear()
     }
 
     private fun selectImage() {
