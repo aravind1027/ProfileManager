@@ -12,7 +12,14 @@ class CreateProfilePresenter(
     private val database = UserRoomDatabase.getDatabase(application)
     private val repository = UserRepository(database.userDao())
 
+    init {
+        view.setOnClickForSubmitButton()
+    }
+
     override fun addUser(user: User) {
         repository.insert(user)
     }
+
+
+
 }

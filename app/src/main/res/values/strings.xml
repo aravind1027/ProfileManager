@@ -9,13 +9,14 @@
     <string name="male">M</string>
     <string name="female">F</string>
     <string name="age">Age</string>
-    <string name="date_of_birth_hint">Date of Birth (mm/dd/yyyy)</string>
+    <string name="date_of_birth_hint">Date of Birth (MM/dd/yyyy)</string>
     <string name="brief_desc_text">Add a brief description about yourself</string>
     <string name="submit">Submit</string>
     <string name="view_all_profiles">View All Profiles</string>
-    <string name="personal_info">First: %s Last: %s Age: %s DOB: %s Gender: %s Education: %s</string>
+    <string name="personal_info">First: %s Last: %s Age: %s DOB: %s Gender: %s Education: %s Hobbies: %s</string>
     <string name="bio">Bio:\n%s</string>
     <string name="select_image_prompt">Select Image:</string>
+    <string name="select_hobbies">Select Hobbies</string>
     <string-array name="education_level">
         <item>Uneducated</item>
         <item>High School</item>
@@ -24,5 +25,15 @@
         <item>Bachelor\'s Degree</item>
         <item>Master\'s Degree</item>
         <item>Ph.D.</item>
+    </string-array>
+    <string-array name="hobbies">
+        <item>Knitting</item>
+        <item>Painting</item>
+        <item>Yoga</item>
+        <item>Tennis</item>
+        <item>Fishing</item>
+        <item>Piano</item>
+        <item>Gardening</item>
+        <item>Astronomy</item>
     </string-array>
 </resources>

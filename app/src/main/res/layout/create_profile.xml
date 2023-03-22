@@ -1,151 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingHorizontal="8dp">
-
-    <TextView
-        android:id="@+id/create_profile_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="12dp"
-        android:text="@string/create_profile_title"
-        android:textSize="24sp"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    
-    <EditText
-        android:id="@+id/first_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/first_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/create_profile_title"
-        android:autofillHints="no"
-        android:inputType="text" />
-
-    <EditText
-        android:id="@+id/last_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/last_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/first_name"
-        android:autofillHints="no"
-        android:inputType="text" />
-
-    <EditText
-        android:id="@+id/age"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/age"
-        android:autofillHints="no"
-        android:inputType="numberDecimal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/last_name" />
-
-    <EditText
-        android:id="@+id/date_of_birth"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/date_of_birth_hint"
-        android:autofillHints="no"
-        android:inputType="date"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/age" />
-
-    <RadioGroup
-        android:id="@+id/gender_select"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginStart="4dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/date_of_birth">
+    android:paddingHorizontal="8dp"
+    android:orientation="vertical">
 
         <TextView
-            android:id="@+id/gender"
-            android:layout_width="wrap_content"
+            android:id="@+id/create_profile_title"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/gender"
-            android:textSize="18sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/last_name"/>
+            android:padding="12dp"
+            android:text="@string/create_profile_title"
+            android:textSize="24sp"
+            android:gravity="center" />
 
-        <RadioButton
-            android:id="@+id/male"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/male" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <RadioButton
-            android:id="@+id/female"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/female" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-    </RadioGroup>
+                        <EditText
+                            android:id="@+id/first_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/first_name"
+                            android:autofillHints="no"
+                            android:inputType="text" />
 
-    <Spinner
-        android:id="@+id/education_level"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gender_select" />
+                        <EditText
+                            android:id="@+id/last_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/last_name"
+                            android:autofillHints="no"
+                            android:inputType="text" />
 
-    <TextView
-        android:id="@+id/select_image_prompt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/select_image_prompt"
-        android:textSize="18sp"
-        android:layout_margin="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/education_level"
-        app:layout_constraintBottom_toTopOf="@id/profile_picture"/>
+                        <EditText
+                            android:id="@+id/date_of_birth"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/date_of_birth_hint"
+                            android:autofillHints="no"
+                            android:inputType="date" />
 
-    <ImageView
-        android:id="@id/profile_picture"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        app:layout_constraintTop_toBottomOf="@id/education_level"
-        app:layout_constraintBottom_toTopOf="@id/bio"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:clickable="true"
-        android:layout_margin="8dp"
-        android:src="@drawable/portrait_placeholder" />
+                        <RadioGroup
+                            android:id="@+id/gender_select"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginStart="4dp">
 
-    <EditText
-        android:id="@+id/bio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/brief_desc_text"
-        android:autofillHints="no"
-        android:inputType="text|textMultiLine"
-        android:lines="5"
-        android:gravity="top"
-        android:scrollbars="vertical"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_picture" />
+                                <TextView
+                                    android:id="@+id/gender"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/gender"
+                                    android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/submit_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/submit"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bio" />
+                                <RadioButton
+                                    android:id="@+id/male"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/male" />
 
-    <Button
-        android:id="@+id/all_profiles_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/view_all_profiles"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submit_button" />
+                                <RadioButton
+                                    android:id="@+id/female"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/female" />
 
+                        </RadioGroup>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                        <Spinner
+                            android:id="@+id/education_level"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/select_hobbies_prompt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/select_hobbies"
+                            android:textSize="18sp"
+                            android:layout_margin="8dp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/hobbies"
+                            android:padding="8dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:choiceMode="multipleChoice"
+                            android:nestedScrollingEnabled="false" />
+
+                        <TextView
+                            android:id="@+id/select_image_prompt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/select_image_prompt"
+                            android:textSize="18sp"
+                            android:layout_margin="8dp" />
+
+                        <ImageView
+                            android:id="@id/profile_picture"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:clickable="true"
+                            android:layout_margin="8dp"
+                            android:src="@drawable/portrait_placeholder" />
+
+                        <EditText
+                            android:id="@+id/bio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/brief_desc_text"
+                            android:autofillHints="no"
+                            android:inputType="text|textMultiLine"
+                            android:lines="5"
+                            android:gravity="top"
+                            android:scrollbars="vertical" />
+
+                        <Button
+                            android:id="@+id/submit_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/submit" />
+
+                        <Button
+                            android:id="@+id/all_profiles_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/view_all_profiles" />
+
+                </LinearLayout>
+
+        </ScrollView>
+</LinearLayout>

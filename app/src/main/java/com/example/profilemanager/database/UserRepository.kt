@@ -12,8 +12,16 @@ class UserRepository(private val userDao: UserDao) {
         return userDao.findByName(firstName, lastName)
     }
 
+    fun findById(userId: Int): User {
+        return userDao.findById(userId)
+    }
+
     fun insert(user: User) {
         userDao.insert(user)
+    }
+
+    fun insertAll(userList: List<User>) {
+        userDao.insertAll(userList)
     }
 
     fun delete(user: User) {

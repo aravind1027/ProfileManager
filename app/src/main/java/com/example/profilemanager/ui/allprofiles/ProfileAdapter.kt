@@ -2,9 +2,7 @@ package com.example.profilemanager.ui.allprofiles
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,15 +36,16 @@ class ProfileAdapter(
 
     override fun onBindViewHolder(holder: ProfileViewHolder, position: Int) {
         val user = users[position]
-        val (firstName, lastName, age, dateOfBirth, gender, educationLevel, profilePicture, bio) = user
+        val (firstName, lastName, dateOfBirth, gender, educationLevel, hobbies, profilePicture, bio) = user
+        val age = user.calculateAge()
         val profileDetailsScreen = Intent(context, ProfileDetailsScreen::class.java)
-        profileDetailsScreen.putExtra("USER", user)
+        profileDetailsScreen.putExtra("USER_ID", user.id)
 
         holder.profileCard.setOnClickListener {
             startActivity(context, profileDetailsScreen, null)
         }
         holder.profileInfo.text =
-            context.getString(R.string.personal_info, firstName, lastName, age, dateOfBirth, gender, educationLevel)
+            context.getString(R.string.personal_info, firstName, lastName, age, dateOfBirth, gender, educationLevel, hobbies)
         holder.profilePicture.setImageBitmap(BitmapFactory.decodeByteArray(profilePicture, 0, profilePicture.size))
         holder.briefDesc.text = context.getString(R.string.bio, bio)
     }

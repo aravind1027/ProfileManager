@@ -12,8 +12,14 @@ interface UserDao {
             "last_name LIKE :last LIMIT 1")
     fun findByName(first: String, last: String): User
 
+    @Query("SELECT * FROM user_table WHERE id LIKE :userId")
+    fun findById(userId: Int): User
+
     @Insert
     fun insert(user: User)
+
+    @Insert
+    fun insertAll(userList: List<User>)
 
     @Delete
     fun delete(user: User)

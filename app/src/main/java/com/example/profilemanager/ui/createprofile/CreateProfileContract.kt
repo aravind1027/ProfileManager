@@ -4,6 +4,7 @@ import com.example.profilemanager.database.User
 
 interface CreateProfileContract {
     interface View {
+        fun setOnClickForSubmitButton()
     }
 
     interface Presenter {

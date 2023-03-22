@@ -14,7 +14,7 @@
         <activity
             android:name=".ui.createprofile.CreateProfileScreen"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,9 +23,11 @@
         </activity>
         <activity
             android:name=".ui.allprofiles.AllProfilesScreen"
+            android:parentActivityName=".ui.createprofile.CreateProfileScreen"
             android:exported="true" />
         <activity
             android:name=".ui.profiledetails.ProfileDetailsScreen"
+            android:parentActivityName=".ui.allprofiles.AllProfilesScreen"
             android:exported="true" />
     </application>
 

@@ -17,10 +17,21 @@ class ProfileDetailsPresenter(
         return repository.findByName(firstName, lastName)
     }
 
-    override fun displayProfile(user: User) {
-        val (firstName, lastName, age, dateOfBirth, gender, educationLevel, profilePicture, bio) = user
-        view.setPersonalInfo(firstName, lastName, age, dateOfBirth, gender, educationLevel)
-        view.setProfilePicture(profilePicture)
-        view.setBriefDescription(bio)
+    override fun displayProfile(userId: Int) {
+        if (userId >= 0) {
+            val user = repository.findById(userId)
+            val (firstName, lastName, dateOfBirth, gender, educationLevel, hobbies, profilePicture, bio) = user
+            view.setPersonalInfo(
+                firstName,
+                lastName,
+                user.calculateAge(),
+                dateOfBirth,
+                gender,
+                educationLevel,
+                hobbies
+            )
+            view.setProfilePicture(profilePicture)
+            view.setBriefDescription(bio)
+        }
     }
 }
