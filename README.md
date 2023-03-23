@@ -27,3 +27,12 @@
 4.	use xml not compose
 6.	2 weeks deadline
 7.	don’t worry much about testing, mainly focus on architecture 
+
+
+![create_profile_screen_1](https://user-images.githubusercontent.com/29805179/227346506-424ae835-7c36-45cd-a23f-4a97fcdbcf88.png)
+
+![create_profile_screen_2](https://user-images.githubusercontent.com/29805179/227346547-55832a60-f2e1-4999-905a-585bb3e67fa6.png)
+
+![all_profiles_screen_2](https://user-images.githubusercontent.com/29805179/227346658-a8e7a7cc-86d4-407f-bd7f-d2f6be120b2f.png)
+
+![profile_details_screen_1](https://user-images.githubusercontent.com/29805179/227346754-8669f83f-5a4c-48ea-93ab-34efb69ffdf5.png)
