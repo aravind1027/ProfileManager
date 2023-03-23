@@ -1,7 +1,6 @@
 package com.example.profilemanager.database
 
 import androidx.room.*
-import com.example.profilemanager.database.User
 
 @Dao
 interface UserDao {

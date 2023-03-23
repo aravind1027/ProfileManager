@@ -1,8 +1,5 @@
 package com.example.profilemanager.database
 
-import com.example.profilemanager.database.User
-import com.example.profilemanager.database.UserDao
-
 class UserRepository(private val userDao: UserDao) {
     fun getAll(): MutableList<User> {
         return userDao.getAll()
