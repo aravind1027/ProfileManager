@@ -1,13 +1,8 @@
 package com.example.profilemanager.database
 
-import android.media.Image
-import android.os.Build.VERSION_CODES.M
-import android.widget.ImageView
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.profilemanager.R
-import java.io.File.separator
 import java.io.Serializable
 import java.time.LocalDate
 import java.time.Period
